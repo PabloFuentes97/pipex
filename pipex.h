@@ -6,7 +6,7 @@
 /*   By: pfuentes <pfuentes@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:03:09 by pfuentes          #+#    #+#             */
-/*   Updated: 2023/01/16 09:35:27 by pfuentes         ###   ########.fr       */
+/*   Updated: 2023/02/02 10:04:14 by pfuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
+char	*free_join(char *buf, char *stash);
 char	*get_next_line(int fd);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);

@@ -6,7 +6,7 @@
 /*   By: pfuentes <pfuentes@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:03:09 by pfuentes          #+#    #+#             */
-/*   Updated: 2023/01/12 10:46:10 by pfuentes         ###   ########.fr       */
+/*   Updated: 2023/02/02 10:04:22 by pfuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*create_stash(char *stash, int fd)
 	char	*buf;
 	int		bytes;
 
-	buf = (char *)calloc(1001, sizeof(char));
+	buf = (char *)ft_calloc(1001, sizeof(char));
 	if (!buf)
 		return (NULL);
 	bytes = 1;
@@ -84,12 +84,12 @@ char	*create_stash(char *stash, int fd)
 		bytes = read(fd, buf, 1000);
 		if (bytes == -1 || buf == NULL)
 			return (NULL);
-		buf[bytes] = '\0';
+		buf[1000] = '\0';
 		if (bytes > 0)
 		{
 			if (!stash)
 				stash = ft_calloc(1, 1);
-			stash = ft_strjoin(buf, stash);
+			stash = free_join(buf, stash);
 		}
 	}
 	if (buf)

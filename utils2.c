@@ -6,7 +6,7 @@
 /*   By: pfuentes <pfuentes@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:03:09 by pfuentes          #+#    #+#             */
-/*   Updated: 2023/01/20 10:54:32 by pfuentes         ###   ########.fr       */
+/*   Updated: 2023/02/02 10:03:53 by pfuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,15 @@ int	compare_here_doc(char *here_doc, char *lim)
 		len = ft_strlen(lim);
 	free(here_doc_mod);
 	return (len);
+}
+
+char	*free_join(char *buf, char *stash)
+{
+	char	*aux_stash;
+
+	if (!buf | !stash)
+		return (NULL);
+	aux_stash = ft_strjoin(buf, stash);
+	free(stash);
+	return (aux_stash);
 }
